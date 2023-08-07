@@ -1,0 +1,156 @@
+:root {
+  /*Colores*/
+  --body-bg-color: rgb(255, 255, 235);
+  --header-bg-color: rgb(255, 255, 0);
+  --main-bg-color: rgb(255, 255, 225);
+  --footer-bg-color: rgb(255, 255, 0);
+  --dark-bg-color: rgb(0, 0, 0);
+  --agregar-bg-color: rgb(0, 150, 0);
+  --eliminar-bg-color: rgb(200, 0, 0);
+  --boton-bg-color: rgb(0, 200, 255);
+  --vacio-bg-color: rgb(0, 200, 255);
+  --pasillo-bg-color: rgb(240, 240, 0);
+  --pasajero-bg-color: rgb(0, 150, 0);
+  --piloto-bg-color: rgb(0, 0, 255);
+  --bano-bg-color: rgb(200, 0, 0);
+
+  --title-color: rgb(255, 255, 225);
+  --base-color: rgb(255, 255, 225);
+  /*Padding*/
+  --base-padding: 1rem;
+  /*font-size*/
+  --title-font-size: 3.5rem;
+  /*min-width*/
+  --base-min-width: 375px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif, Tahoma;
+  font-size: 10px;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--body-bg-color);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+.header {
+  background-color: var(--header-bg-color);
+  padding: var(--base-padding);
+  display: flex;
+}
+.title {
+  background-color: var(--dark-bg-color);
+  border-radius: 0 1rem 0 1rem;
+  color: var(--title-color);
+  font-size: var(--title-font-size);
+  font-weight: bolder;
+  padding: 1rem;
+}
+.main {
+  background-color: var(--main-bg-color);
+  padding: var(--base-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.footer {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: var(--footer-bg-color);
+  padding: var(--base-padding);
+  & p,
+  a {
+    color: var(--base-color);
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
+  & p {
+    background-color: var(--dark-bg-color);
+    border-radius: 0 1rem 0 1rem;
+    padding: 1rem;
+  }
+}
+.botones {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 0.5rem;
+}
+.boton {
+  background-color: var(--main-bg-color);
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: 1px solid var(--boton-bg-color);
+  color: var(--boton-bg-color);
+  &:hover {
+    background-color: var(--boton-bg-color);
+    color: var(--base-color);
+  }
+}
+.boton__agregar {
+  border: 1px solid var(--agregar-bg-color);
+  color: var(--agregar-bg-color);
+  &:hover {
+    background-color: var(--agregar-bg-color);
+    color: var(--base-color);
+  }
+}
+.boton__eliminar {
+  border: 1px solid var(--eliminar-bg-color);
+  color: var(--eliminar-bg-color);
+  &:hover {
+    background-color: var(--eliminar-bg-color);
+    color: var(--base-color);
+  }
+}
+.table {
+  border: 1px black solid;
+  border-radius: 0.5rem;
+}
+.vacio {
+  background-color: var(--vacio-bg-color);
+}
+.pasillo {
+  background-color: var(--pasillo-bg-color);
+}
+.pasajero {
+  background-color: var(--pasajero-bg-color);
+}
+.piloto {
+  background-color: var(--piloto-bg-color);
+}
+.copiloto {
+  background-color: var(--piloto-bg-color);
+}
+.bano {
+  background-color: var(--bano-bg-color);
+}
+.vacio,
+.pasillo,
+.pasajero,
+.bano,
+.copiloto,
+.piloto {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 11rem;
+  padding: 0.5rem;
+  border: 1px black solid;
+  border-radius: 0.5rem;
+  color: var(--base-color);
+  & > * {
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+}
+.mensaje {
+  font-size: 1.6rem;
+  padding: 1rem;
+}
